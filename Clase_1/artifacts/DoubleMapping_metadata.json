@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_saldo",
+						"type": "uint256"
+					}
+				],
+				"name": "fijarSaldo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "leerSaldo",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Clase_1/3_5_DoubleMapping.sol": "DoubleMapping"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Clase_1/3_5_DoubleMapping.sol": {
+			"keccak256": "0x76f1b530ab8a021700b71efaeecdc9e0e90cf589eef901c7edcdbdacfef73901",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://44a9628be3fe715bcae93286c30d3ad9c1c95e3507e2753241f0d28aa843fda5",
+				"dweb:/ipfs/QmeTEptGLWoAMfhSCqspK8pT4WKPkQwXgoDs8Rv5yRAfZu"
+			]
+		}
+	},
+	"version": 1
+}

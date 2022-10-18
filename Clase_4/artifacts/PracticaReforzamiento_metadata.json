@@ -1,0 +1,121 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "direccion",
+						"type": "address"
+					}
+				],
+				"name": "ListaBlancaActualizada",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "cuenta",
+						"type": "address"
+					}
+				],
+				"name": "AgregarListaBlanca",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "AgregarPermisos",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_cuenta",
+						"type": "address"
+					}
+				],
+				"name": "ConsultarGasto",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "cliente",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cuenta",
+						"type": "uint256"
+					}
+				],
+				"name": "SistemaContable",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Clase_4/PracticaReforzamiento.sol": "PracticaReforzamiento"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Clase_4/PracticaReforzamiento.sol": {
+			"keccak256": "0xed2d2732ad36e0e7663e6a4a06b728c954ed4348f6da555d3677f4666c3d6361",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f612e330124c53fd9ae7b3a12913950eea4984ba8b5add44f40d1a014ca5557b",
+				"dweb:/ipfs/QmPsJRTAN2WA4gPS1pXAaHU8VGbUv4fC6C8d1bZ6587L1d"
+			]
+		}
+	},
+	"version": 1
+}

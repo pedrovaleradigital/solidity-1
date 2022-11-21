@@ -1,0 +1,211 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "renounceOwner",
+						"type": "address"
+					}
+				],
+				"name": "RenounceOwnership",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_prevOwner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "TransferOwnership",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_role",
+						"type": "bytes32"
+					}
+				],
+				"name": "grantRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_limit",
+						"type": "uint256"
+					}
+				],
+				"name": "grantRoleTemporarily",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_role",
+						"type": "bytes32"
+					}
+				],
+				"name": "hasRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_role",
+						"type": "bytes32"
+					}
+				],
+				"name": "hasTemporaryRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Desarrollar un sistema complejo de control de accesos. Seguir las instrucciones: Cada cuenta puede tener uno o más roles. Los roles se pueden repetir en varias cuentas. 0. Definir el rol de admin con el cual se inicializa el smart contract |           | MINTER | BURNER | PAUSER | | --------- | ------ | ------ | ------ | | Account 1 | True   | True   | True   | | Account 2 | True   | False  | True   | | Account 3 | False  | False  | True   | |   ...     |   ...  |  ...   |  ...   | 1. definir un mapping doble para guardar una matriz de información. El mapping debe ser 'private' mapping 1 -> address => role mapping 2 -> role => boolean mapping(address => mapping(bytes32 => bool)) roles; 2. definir metodo de lectura de datos de la matriz hasRole 3. definir método para escribir datos en la matriz grantRole mapping[accout 1][MINTER] = true mapping[accout 1][BURNER] = true mapping[accout 1][PAUSER] = true mapping[accout 2][MINTER] = true mapping[accout 2][PAUSER] = true mapping[accout 3][PAUSER] = true 4. crear modifier que verifica el acceso de los roles 5. utilizar el constructor para inicializar valores EXTRA: 6. Crear un método que se llame 'transferOwnership(address _newOwner)' Recibe un argumento: el address del nuevo owner Solo Puede ser llamado por una cuenta admin La cuenta admin transfiere sus derechos de admin a '_newOwner' Dispara el evento 'TransferOwnership(address _prevOwner, address _newOwner)' 7. Crear un método lalmada 'renounceOwnership' La cuenta que lo llama es una cuenta admin Esta cuenta renuncia su derecho a ser admin Dispara un evento RenounceOwnership(msg.sender) 8. Crear un método llamado 'grantRoleTemporarily' Le asigna un rol determinado a una cuenta por una cantidad 'N' de veces Dicha cuenta solo puede llamar métodos del tipo rol '_role' hasta 'N' function grantRoleTemporarily(address _account, bytes32 _role, uint256 _limit) El argumento '_limit' es mayor a uno - require 9. Definir su getter llamado 'hasTemporaryRole(address _account, bytes32 _role) returns (bool, uint256)' Retorna dos valores: - indica si dicha cuenta tiene una rol temporal: true/false - indica la cantidad de veces restantes que puede llamar métodos del tipo rol '_role' - si no tiene rol temporal, devolver (false, 0)",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Practica1/AccessControlLearning.sol": "AccessControlLearning"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Practica1/AccessControlLearning.sol": {
+			"keccak256": "0xee0312e2ce330c3be577c34984cbf7018b4db2f1963bba9c58ae156d56cf52b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d12a8696a794cbdaeaf7898e907f2a611db9adbacf6ac01892a6d6bc5c62a4f",
+				"dweb:/ipfs/QmaFdfB22g8RXcfokqtRKHUYdLm1EkvCBs64KAjAuKvxVh"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "saludo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Clase_Interfaces/interfaces-sintaxis2.sol": "ElQueSeraLlamado"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Clase_Interfaces/interfaces-sintaxis2.sol": {
+			"keccak256": "0x807ca3e0438a02d54260e7d20e8de0988f88631c5401e4f86619936c640213d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://adb729daba25e9cb133e5abdd0084be5cc122edf77cd9014dd2552c318619cef",
+				"dweb:/ipfs/QmSXGpXJTCWycr2Af2MaGbZxxVnx5J19swaDPTbzyeCKfg"
+			]
+		}
+	},
+	"version": 1
+}

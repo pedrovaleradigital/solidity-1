@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "guardar",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "listaEstadosCuenta",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fecha",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "nombres",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "apellidos",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "variar",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Clase Structs/Structs.sol": "structs"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Clase Structs/Structs.sol": {
+			"keccak256": "0xedb46c5767dd2a3f0fdc877a85246409a0349058292174ccb9f023c125c398e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6b3c1ced0a11caa6deef3dde9124e1e21cf58e602fb2763a04a4138e700b9199",
+				"dweb:/ipfs/QmeKaYwUfvNkhfoz2fGP9WRPM4R8JLCNQiLyKkrtHGqScH"
+			]
+		}
+	},
+	"version": 1
+}

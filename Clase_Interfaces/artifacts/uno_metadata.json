@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "funcionuno",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Clase_Interfaces/interfaces.sol": "uno"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Clase_Interfaces/interfaces.sol": {
+			"keccak256": "0xbb8812143f54b00c636ca10cc23e561244f28adbf9c0ba36c605390e66bfe000",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://de537a83a21f06b9fcc16def8b4bafb924fa615f2f7dd94400ae6a4700031e03",
+				"dweb:/ipfs/QmT8sZCzvfytHWSgTze7Bx1PsGvJMxaGqQBTjJndZmGVQj"
+			]
+		}
+	},
+	"version": 1
+}

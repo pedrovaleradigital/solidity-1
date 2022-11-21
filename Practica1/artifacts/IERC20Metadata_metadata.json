@@ -1,0 +1,144 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"decimals()": {
+					"details": "Returns the decimals places of the token."
+				},
+				"name()": {
+					"details": "Returns the name of the token."
+				},
+				"symbol()": {
+					"details": "Returns the symbol of the token."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Construir un TOKEN que cumple con las estándares del ERC20. Sigues las instrucciones a continuación: 1. Heredar la interface IERC20 en TokenERC20_1 e implementar sus métodos requeridos Cada método dentro de la interface está definida. Crear los mappings y demás variables internas necesarias - approve: Cuando se aprueba a zero address: Mensaje de require: \"Spender no puede ser zero\" - transferFrom: Cuando la cuenta que llama no tiene permiso: Mensaje de require: \"No tiene permiso para transferir\" 2. Heredar la interface IERC20Metadata en TokenERC20_1 e implementar sus métodos requeridos Cada método dentro de la interface está definida. Crear los mappings y demás variables internas necesarias Nota: - IERC20 define los metodos necesarios para transferir, dar permiso y llevar las cuentas del token - IERC20Metadata define los metodos que describen al token (nombre, simbolo y decimales) 3. Nombre, símbolo y decimales serán incluidos en el smart contract a través del constructor 4. Crear el método 'mint' que permite acuñar tokens a favor de una cuenta - mint no es parte del estándar ERC20 - verifica que no se acuñe tokens a favor de la cuenta zero address. Mensaje require: \"Mint a favor del address zero\" - emite el evento Transfer(address(0), to, amount) - hacer publico este método - function mint(address to, uint256 amount) public {} 5. Crear el método 'burn' que permite a una cuenta quemar SUS tokens - burn no es parte del estándar ERC20 - verifica que de quien se queme tokens no es el address zero. Mensaje require: \"Se quema tokens de address zero\" - verifica que la cuenta de quien se quema tenga suficiente balance. Mensaje require: \"Cuenta no tiene suficientes tokens\" - emite el evento Transfer(from, address(0), amount) EXTRA: 6. Incrementar permiso function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool); Permite incrementar el permiso otorgado con el método 'approve' No es parte del estandar ERC20 pero lo complementa emite el evento Approval(from, to, nuevoMonto) 7. Decrementar permiso function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool); Permite disminuir el permiso otorgado con el método 'approve' No es parte del estandar ERC20 pero lo complementa emite el evento Approval(from, to, nuevoMonto) 8. Incluir roles y proteger la acuñación Crear un método adicional y llamarlo 'mintProtected' que inlcuye el modifier 'onlyRole(MINTER_ROLE)' Importar al inicio del archivo el contrato roles import \"./AccessControlLearning.sol\"; Heredar dicho contrato en el contrato 'TokenERC20_1' Crear un rol en el contrato: bytes32 public constant MINTER_ROLE = keccak256(\"MINTER_ROLE\");",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Practica1/TokenERC20_1.sol": "IERC20Metadata"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/AccessControl.sol": {
+			"keccak256": "0x5b35d8e68aeaccc685239bd9dd79b9ba01a0357930f8a3307ab85511733d9724",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba8eb2d22f9321bd4660f6617c181d9611ff30a9b089408b8c6e2216d6d5cdc5",
+				"dweb:/ipfs/QmTSJvhjHfnUV1j4hsqDv8PmLvGBLRs9gHLjTUXrUJ5Y9q"
+			]
+		},
+		"@openzeppelin/contracts/access/IAccessControl.sol": {
+			"keccak256": "0x59ce320a585d7e1f163cd70390a0ef2ff9cec832e2aa544293a00692465a7a57",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bb2c137c343ef0c4c7ce7b18c1d108afdc9d315a04e48307288d2d05adcbde3a",
+				"dweb:/ipfs/QmUxhrAQM3MM3FF5j7AtcXLXguWCJBHJ14BRdVtuoQc8Fh"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6f2cf1c531122bc7ca96b8c8db6a60deae60441e5223065e792553d4849b5638",
+				"dweb:/ipfs/QmPBdJmBBABMDCfyDjCbdxgiqRavgiSL88SYPGibgbPas9"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d",
+				"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"Practica1/TokenERC20_1.sol": {
+			"keccak256": "0xf78fbbb734fce6401aa74d06b9d08af6fbae195f26c347774d957cc01c0b33f3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7417cf8c2d21ba0a6b5b708cc64bbb174692bba3ff16be124f887ac95f506e30",
+				"dweb:/ipfs/QmRtjG76amJvHKaDfdWMsMej5Yc5ygiYnu6pigXQyGpQkk"
+			]
+		}
+	},
+	"version": 1
+}
